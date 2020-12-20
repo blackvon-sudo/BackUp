@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9598403B-8296-407E-B136-4D9993FA07BE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BackUp.Winform</RootNamespace>
+    <AssemblyName>Oracle数据库备份</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\Exct.cs" />
+    <Compile Include="Class\Json.cs" />
+    <Compile Include="Class\Mail.cs" />
+    <Compile Include="Class\Unit.cs" />
+    <Compile Include="Fm_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fm_About.Designer.cs">
+      <DependentUpon>Fm_About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Assemblys.cs" />
+    <Compile Include="Models\Record.cs" />
+    <Compile Include="Fm_AddBackUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fm_AddBackUp.Designer.cs">
+      <DependentUpon>Fm_AddBackUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fm_Export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fm_Export.Designer.cs">
+      <DependentUpon>Fm_Export.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fm_Import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fm_Import.Designer.cs">
+      <DependentUpon>Fm_Import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fm_Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fm_Loading.Designer.cs">
+      <DependentUpon>Fm_Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fm_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fm_Main.Designer.cs">
+      <DependentUpon>Fm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fm_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fm_Setting.Designer.cs">
+      <DependentUpon>Fm_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BackUp.cs" />
+    <Compile Include="Models\Enum.cs" />
+    <Compile Include="Models\Setting.cs" />
+    <Compile Include="Models\Status.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Fm_About.resx">
+      <DependentUpon>Fm_About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fm_AddBackUp.resx">
+      <DependentUpon>Fm_AddBackUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fm_Export.resx">
+      <DependentUpon>Fm_Export.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fm_Import.resx">
+      <DependentUpon>Fm_Import.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fm_Loading.resx">
+      <DependentUpon>Fm_Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fm_Main.resx">
+      <DependentUpon>Fm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fm_Setting.resx">
+      <DependentUpon>Fm_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
